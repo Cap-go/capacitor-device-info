@@ -3,7 +3,7 @@ import Foundation
 
 @objc(DeviceInfoPlugin)
 public class DeviceInfoPlugin: CAPPlugin, CAPBridgedPlugin {
-    private let pluginVersion = "8.0.0"
+    private let pluginVersion = "8.0.1"
     private let defaultIntervalMs = 1000
     private let minimumIntervalMs = 250
 

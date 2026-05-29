@@ -58,7 +58,7 @@ public class DeviceInfo {
     }
 
     public String getPluginVersion() {
-        return "8.0.0";
+        return "8.0.1";
     }
 
     private JSObject getCpuInfo() {
@@ -121,7 +121,7 @@ public class DeviceInfo {
     private JSObject getStorageInfo(Context context) {
         JSObject storage = new JSObject();
         File filesDir = context.getFilesDir();
-        File target = filesDir != null ? filesDir : context.getDataDir();
+        File target = filesDir != null ? filesDir : new File(context.getApplicationInfo().dataDir);
         StatFs statFs = new StatFs(target.getAbsolutePath());
         long totalBytes = statFs.getTotalBytes();
         long freeBytes = statFs.getAvailableBytes();
