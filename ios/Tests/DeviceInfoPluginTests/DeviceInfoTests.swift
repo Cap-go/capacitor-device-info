@@ -17,6 +17,6 @@ class DeviceInfoTests: XCTestCase {
         let implementation = DeviceInfo()
         let result = implementation.getPluginVersion()
 
-        XCTAssertEqual("8.0.1", result)
+        XCTAssertEqual("8.0.2", result)
     }
 }

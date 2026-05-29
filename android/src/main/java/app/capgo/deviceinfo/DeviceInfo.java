@@ -58,7 +58,7 @@ public class DeviceInfo {
     }
 
     public String getPluginVersion() {
-        return "8.0.1";
+        return "8.0.2";
     }
 
     private JSObject getCpuInfo() {

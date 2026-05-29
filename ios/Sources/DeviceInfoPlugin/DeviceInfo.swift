@@ -26,7 +26,7 @@ import Metal
     }
 
     @objc public func getPluginVersion() -> String {
-        return "8.0.1"
+        return "8.0.2"
     }
 
     private func cpuInfo() -> [String: Any] {

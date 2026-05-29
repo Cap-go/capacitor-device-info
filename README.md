@@ -7,15 +7,58 @@
   <h2><a href="https://capgo.app/consulting/?ref=plugin_device_info">Missing a feature? We build Capacitor plugins</a></h2>
 </div>
 
-Capacitor plugin for reading CPU, memory, GPU, storage, thermal, low-power-mode, and onboard sensor data from iOS, Android, and Web.
+Production-ready Capacitor plugin for device diagnostics, support screens, QA tools, and in-app performance dashboards. Read CPU, memory, GPU, storage, thermal, low-power-mode, and onboard sensor data from iOS, Android, and Web with one snapshot call or a live interval stream.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Cap-go/capacitor-device-info/main/.github/assets/device-info-example.png" alt="@capgo/capacitor-device-info example app streaming CPU, memory, storage, GPU, and onboard sensor metrics" width="900" />
+</p>
 
 ## Features
 
-- Read an instant device snapshot with CPU, memory, GPU, storage, and onboard sensor fields.
-- Stream snapshots on an interval with `deviceInfoUpdate` listeners for charts and dashboards.
-- Stop streams by duration or sample count.
-- Reports available onboard sensors and common readings such as Android battery temperature, ambient temperature, humidity, pressure, light, and proximity when hardware exposes them.
-- Uses native platform APIs: Metal, Mach, and CoreMotion availability on iOS; ActivityManager, StatFs, `/proc`, OpenGL ES, SensorManager, and thermal zones on Android.
+- One API for instant snapshots and live monitoring streams.
+- No runtime permissions for the metrics currently exposed.
+- Built for support/debug dashboards: identify low memory, storage pressure, low power mode, thermal state, GPU renderer, and hardware sensor availability.
+- Listener-first streaming for charts: `deviceInfoUpdate` emits CPU, memory, storage, GPU, thermal, and sensor snapshots on a configurable interval.
+- Auto-stop streams by `durationMs` or `sampleCount`.
+- Onboard sensor catalog with common readings when hardware exposes them: battery temperature, ambient temperature, relative humidity, pressure, light, and proximity.
+- Native implementations: Metal, Mach, and CoreMotion availability on iOS; ActivityManager, StatFs, `/proc`, OpenGL ES, SensorManager, and thermal zones on Android.
+
+## What You Can Read
+
+| Area | Data |
+| ---- | ---- |
+| CPU | Core count, active cores, architecture, model, usage percent, max frequency, Android best-effort CPU temperature |
+| Memory | Total/free/used bytes, used percent, app heap usage/limit, low-memory flag, pressure state |
+| Storage | Total/free/used bytes and used percent for the app data volume |
+| GPU | API, vendor, renderer, version, max texture size, Android best-effort GPU temperature |
+| Power | Low power mode / battery saver state |
+| Thermal | Platform thermal state: `nominal`, `fair`, `serious`, `critical`, or `unknown` |
+| Sensors | Full onboard sensor list plus sampled readings for supported environmental/proximity sensors |
+| Stream metadata | Sequence number, stream start timestamp, elapsed milliseconds |
+
+## Sensor Coverage
+
+| Reading | iOS | Android | Web |
+| ------- | --- | ------- | --- |
+| Sensor availability list | CoreMotion sensor availability | `SensorManager` full sensor list | Empty fallback |
+| CPU/GPU temperature | Not exposed by public iOS APIs | Best-effort thermal-zone reads | Not exposed |
+| Battery temperature | Not exposed by public iOS APIs | `ACTION_BATTERY_CHANGED` | Not exposed |
+| Ambient temperature | Not exposed | Sampled when `TYPE_AMBIENT_TEMPERATURE` exists | Not exposed |
+| Relative humidity | Not exposed | Sampled when `TYPE_RELATIVE_HUMIDITY` exists | Not exposed |
+| Pressure | Barometer availability | Sampled when `TYPE_PRESSURE` exists | Not exposed |
+| Light | Not exposed | Sampled when `TYPE_LIGHT` exists | Not exposed |
+| Proximity | Not exposed | Sampled when `TYPE_PROXIMITY` exists | Not exposed |
+
+Sensor data is onboard-only. This plugin does not call weather services or fetch outside temperature/humidity from the network.
+
+## Common Use Cases
+
+- Add a diagnostics panel to support tickets.
+- Stream device metrics into an in-app performance graph.
+- Detect low-memory or low-storage conditions before heavy work.
+- Show hardware/GPU details when debugging device-specific rendering bugs.
+- Log thermal and low-power state around slow sessions.
+- Discover available sensors before enabling sensor-heavy features.
 
 ## Compatibility
 
@@ -55,8 +98,6 @@ await handle.remove();
 ```
 
 CPU usage is calculated from deltas, so the first native sample may omit `cpu.usagePercent`. Periodic monitoring fills it after the second sample when the platform exposes CPU ticks.
-
-Sensor data is onboard-only. This plugin does not call weather services or fetch outside temperature/humidity from the network.
 
 ## Platform Notes
 
