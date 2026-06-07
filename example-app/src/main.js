@@ -43,7 +43,8 @@ const formatBytes = (value) => {
   return `${size.toFixed(size >= 10 || unit === 0 ? 0 : 1)} ${units[unit]}`;
 };
 
-const formatNumber = (value, unit) => (typeof value === 'number' ? `${value.toFixed(1)} ${unit}` : null);
+const formatNumber = (value, unit) =>
+  typeof value === 'number' ? `${value.toFixed(1)} ${unit}` : null;
 
 const sensorSummary = (sample) => {
   const sensors = sample.sensors ?? {};
