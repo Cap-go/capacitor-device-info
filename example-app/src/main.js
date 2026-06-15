@@ -1,3 +1,5 @@
+import { CapacitorUpdater } from '@capgo/capacitor-updater';
+import { Capacitor } from '@capacitor/core';
 import './style.css';
 import { DeviceInfo } from '@capgo/capacitor-device-info';
 
@@ -41,7 +43,8 @@ const formatBytes = (value) => {
   return `${size.toFixed(size >= 10 || unit === 0 ? 0 : 1)} ${units[unit]}`;
 };
 
-const formatNumber = (value, unit) => (typeof value === 'number' ? `${value.toFixed(1)} ${unit}` : null);
+const formatNumber = (value, unit) =>
+  typeof value === 'number' ? `${value.toFixed(1)} ${unit}` : null;
 
 const sensorSummary = (sample) => {
   const sensors = sample.sensors ?? {};
@@ -220,3 +223,9 @@ setupListener().catch((error) => {
 });
 
 drawChart();
+
+if (Capacitor.isNativePlatform()) {
+  CapacitorUpdater.notifyAppReady().catch((error) => {
+    console.error('Capgo notifyAppReady failed', error);
+  });
+}
