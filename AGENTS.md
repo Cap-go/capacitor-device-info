@@ -43,3 +43,7 @@ API docs in `README.md` are auto-generated between `<docgen-index>` and `<docgen
 ## Versioning
 
 Plugin major version follows Capacitor major version. New releases start at `8.0.0` for Capacitor 8.
+
+## Timeout Policy
+
+- Keep CI, script, and runtime timeouts at 10 minutes or less. Use `timeout-minutes: 10` or lower in GitHub Actions and cap timeout values at `600000` ms, `600` seconds, or `10m` unless explicitly requested.
