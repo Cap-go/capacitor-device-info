@@ -1,6 +1,6 @@
 {
   "name": "@capgo/capacitor-device-info",
-  "version": "8.0.6",
+  "version": "8.0.7",
   "description": "Capacitor plugin for reading CPU, memory, GPU, storage, and onboard sensor metrics.",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
