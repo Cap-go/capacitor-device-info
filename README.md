@@ -1,10 +1,12 @@
 # @capgo/capacitor-device-info
 
-<a href="https://capgo.app/"><img src="https://capgo.app/readme-banner.svg?repo=Cap-go/capacitor-device-info" alt="Capgo - Instant updates for Capacitor" /></a>
+<a href="https://capgo.app/?ref=plugin_device_info"><img src="https://capgo.app/readme-banner.svg?repo=Cap-go/capacitor-device-info" alt="Capgo - Instant updates for Capacitor" /></a>
 
 <div align="center">
-  <h2><a href="https://capgo.app/?ref=plugin_device_info">Get Instant updates for your App with Capgo</a></h2>
-  <h2><a href="https://capgo.app/consulting/?ref=plugin_device_info">Missing a feature? We build Capacitor plugins</a></h2>
+  <p><b>Capgo</b>: open-source live updates for Ionic and Capacitor apps. Ship OTA fixes and features instantly, without waiting for app store review.</p>
+  <h2><a href="https://capgo.app/register/?ref=plugin_device_info">➡️ Get started for free</a></h2>
+  <p>14-day unlimited free trial. No credit card required</p>
+  <p><a href="https://capgo.app/consulting/?ref=plugin_device_info">Missing a feature? We'll build the plugin for you 💪</a></p>
 </div>
 
 Production-ready Capacitor plugin for device diagnostics, support screens, QA tools, and in-app performance dashboards. Read CPU, memory, GPU, storage, thermal, low-power-mode, and onboard sensor data from iOS, Android, and Web with one snapshot call or a live interval stream.
