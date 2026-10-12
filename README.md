@@ -1,6 +1,6 @@
 # @capgo/capacitor-device-info
 
-<a href="https://capgo.app/?ref=plugin_device_info"><img src="https://capgo.app/readme-banner.svg?repo=Cap-go/capacitor-device-info" alt="Capgo - Instant updates for Capacitor" /></a>
+<a href="https://capgo.app/?ref=plugin_device_info"><img src="https://capgo.app/readme-banner.svg?repo=Cap-go/capacitor-device-info" alt="Capgo - Build Capacitor apps with AI, ship updates instantly" /></a>
 
 <div align="center">
   <p><b>Capgo</b>: push fixes to your Capacitor users in minutes, build signed iOS and Android apps without a Mac, and roll back in one click.</p>
@@ -8,6 +8,8 @@
   <p>14-day unlimited free trial. No credit card required</p>
   <p><a href="https://capgo.app/consulting/?ref=plugin_device_info">Missing a feature? We'll build the plugin for you 💪</a></p>
 </div>
+
+> 🤖 **Building with an AI coding agent?** Install [Capgo skills](https://capgo.app/skills/?ref=plugin_device_info) so Claude Code, Codex, Cursor, Copilot, or Gemini CLI know how to install and use `@capgo/capacitor-device-info` in your Capacitor app: `npx skills add Cap-go/capgo-skills`. Then ask your agent: *"Add @capgo/capacitor-device-info to my Capacitor app and wire it up."* [Agent setup guides](https://capgo.app/agents/?ref=plugin_device_info) · [Hosted MCP](https://capgo.app/docs/ai/mcp/?ref=plugin_device_info)
 
 Production-ready Capacitor plugin for device diagnostics, support screens, QA tools, and in-app performance dashboards. Read CPU, memory, GPU, storage, thermal, low-power-mode, and onboard sensor data from iOS, Android, and Web with one snapshot call or a live interval stream.
 
